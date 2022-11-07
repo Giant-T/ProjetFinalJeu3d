@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 24176126}
   - component: {fileID: 24176125}
   - component: {fileID: 24176127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1992,6 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec87c45c943f8c40af71d0076f30a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thickness: 0.5
 --- !u!1 &343567061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,10 +2816,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2133465044, guid: f6b51f01a36e34e4d9829cc9fc761e5b, type: 3}
+      propertyPath: gravity
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133465044, guid: f6b51f01a36e34e4d9829cc9fc761e5b, type: 3}
+      propertyPath: decelaration
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021187048247603042, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
+        type: 3}
+      propertyPath: m_StepOffset
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3021187048247603043, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021187048247603043, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021187048247603043, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021187048247603043, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3021187048247603043, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
         type: 3}
@@ -2828,7 +2857,7 @@ PrefabInstance:
     - target: {fileID: 3021187048247603043, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.996
+      value: 0.674
       objectReference: {fileID: 0}
     - target: {fileID: 3021187048247603043, guid: f6b51f01a36e34e4d9829cc9fc761e5b,
         type: 3}
