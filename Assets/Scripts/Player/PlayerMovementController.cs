@@ -47,7 +47,7 @@ public class PlayerMovementController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         move *= speed * Time.deltaTime;
 
-        velocity += move;
+        controller.Move(move);
     }
 
     private void CalcGravity()
