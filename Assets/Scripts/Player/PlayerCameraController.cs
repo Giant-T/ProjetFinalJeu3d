@@ -9,13 +9,10 @@ public class PlayerCameraController : MonoBehaviour
     [SerializeField] private float xSensitivity = 100.0f;
     [SerializeField] private float ySensitivity = 100.0f;
 
-    private Camera cam;
-
     private float xRotation = 0f;
 
     private void Start()
     {
-        cam = GetComponent<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
