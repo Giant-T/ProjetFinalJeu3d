@@ -5,10 +5,11 @@ using UnityEngine;
 public abstract class Hittable : MonoBehaviour
 {
     [Header("Particles")]
-    [SerializeField] protected Sprite particleSprite;
     [SerializeField] protected Shader particleShader;
     [SerializeField] protected new ParticleSystem particleSystem;
     [SerializeField] protected ParticleSystemRenderer particleSystemRenderer;
+
+    protected Sprite particleSprite;
 
     protected void CreateParticle()
     {
