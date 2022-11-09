@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovementController : MonoBehaviour
 {
-    [Header("Speeds")]
+    [Header("Forces")]
     [SerializeField] private float speed = 10f;
     [SerializeField] private float gravity = -10f;
+    [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float decelaration = 0.95f;
 
     [Header("Ground Checking")]
@@ -31,7 +32,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (isOnGround && velocity.y < 0)
             velocity.y = -1f;
-        
+
         CalcGravity();
 
         Move();
@@ -44,10 +45,14 @@ public class PlayerMovementController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 moveX = transform.right * x;
+        Vector3 moveZ = transform.forward * z;
+
+        Vector3 move = moveX + moveZ;
+        move = move.normalized * Mathf.Clamp(moveX.magnitude + moveZ.magnitude, -1f, 1f);
         move *= speed * Time.deltaTime;
 
-        controller.Move(move);
+        velocity += move;
     }
 
     private void CalcGravity()
