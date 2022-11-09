@@ -8,7 +8,6 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Forces")]
     [SerializeField] private float speed = 10f;
     [SerializeField] private float gravity = -10f;
-    [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float decelaration = 0.95f;
 
     [Header("Ground Checking")]
