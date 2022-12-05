@@ -6,18 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Gun : MonoBehaviour
 {
-    private const int MAX_NUMBER_BULLETS = 6;
+    [SerializeField] private Weapon weapon;
+    private Camera cam;
 
-    [SerializeField] private float damage = 1f;
-    [SerializeField] private float range = 100f;
-
-    [Header("Delays")]
-    [SerializeField] private float secondsBetweenShots = 0.5f;
-    [SerializeField] private float secondsBetweenReloads = 0.25f;
-
-    [SerializeField] private Camera cam;
-
-    private int numberOfBullets = MAX_NUMBER_BULLETS;
+    private int numberOfBullets;
     private bool canShoot = true;
     private bool canReload = true;
 
@@ -25,8 +17,14 @@ public class Gun : MonoBehaviour
 
     public event Action<int> UpdateBulletCount;
 
+    private void Awake()
+    {
+        numberOfBullets = weapon.maxBulletNumber;
+    }
+
     private void Start()
     {
+        cam = Camera.main;
         animator = GetComponent<Animator>();
     }
 
@@ -49,7 +47,7 @@ public class Gun : MonoBehaviour
 
     private void Reload()
     {
-        if (numberOfBullets == MAX_NUMBER_BULLETS || !canReload)
+        if (numberOfBullets == weapon.maxBulletNumber || !canReload)
             return;
 
         numberOfBullets++;
@@ -70,13 +68,16 @@ public class Gun : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
+        for (int i = 0; i < weapon.pelletsPerShot; i++)
         {
-            Hittable hittable = hit.transform.gameObject.GetComponent<Hittable>();
-
-            if (hittable)
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range))
             {
-                hittable.Hit();
+                Hittable hittable = hit.transform.gameObject.GetComponent<Hittable>();
+
+                if (hittable)
+                {
+                    hittable.Hit();
+                }
             }
         }
     }
@@ -85,7 +86,7 @@ public class Gun : MonoBehaviour
     {
         canShoot = false;
 
-        yield return new WaitForSeconds(secondsBetweenShots);
+        yield return new WaitForSeconds(weapon.secondsBetweenShots);
 
         canShoot = true;
     }
@@ -94,7 +95,7 @@ public class Gun : MonoBehaviour
     {
         canReload = false;
 
-        yield return new WaitForSeconds(secondsBetweenReloads);
+        yield return new WaitForSeconds(weapon.secondsBetweenReloads);
 
         canReload = true;
     }
