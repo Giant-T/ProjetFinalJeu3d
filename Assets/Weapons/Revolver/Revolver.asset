@@ -12,12 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6caf4d64bab6074eabf6f51c0eb8e7f, type: 3}
   m_Name: Revolver
   m_EditorClassIdentifier: 
-  damage: 0
-  pelletsPerShot: 0
-  maxBulletNumber: 0
+  damage: 2
+  pelletsPerShot: 1
+  maxBulletNumber: 6
   bulletSpread: 0
-  range: 0
-  secondsBetweenShots: 0
-  secondsBetweenReloads: 0
-  gunSprite: {fileID: 0}
-  chamberSprites: []
+  range: 100
+  secondsBetweenShots: 0.5
+  secondsBetweenReloads: 0.25
+  gunSprite: {fileID: -1786061095, guid: 924e818d3a1073f4e9d722a9f78745c4, type: 3}
+  gunShotAnimationClip: {fileID: 7400000, guid: 78781abde8cfd00438145f2c4a7eca3e,
+    type: 2}
+  chamberSprites:
+  - {fileID: -2097779035, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -1459525175, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -2068645925, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: 789917151, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -213494519, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: 188627986, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -1528596721, guid: bdb334f15344ff943b1b20a789da341a, type: 3}

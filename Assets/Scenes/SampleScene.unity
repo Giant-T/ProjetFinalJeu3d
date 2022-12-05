@@ -15174,10 +15174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6acd923b98dab949acdac598652de13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
-  secondsBetweenShots: 0.5
-  secondsBetweenReloads: 0.125
-  cam: {fileID: 1958935600}
+  weapon: {fileID: 11400000, guid: c7db1316f132571439239670909db142, type: 2}
 --- !u!95 &1201013563
 Animator:
   serializedVersion: 4
