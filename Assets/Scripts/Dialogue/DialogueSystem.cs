@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
+    [SerializeField] private GameObject dialogueBox;
+
+    [Header("Text Areas")]
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private SpriteRenderer portrait;
+    [SerializeField] private TextMeshProUGUI charName;
+
+    [Header("Portrait")]
+    [SerializeField] private Image portrait;
 
     private Queue<string> messages;
-    public bool isActive = false;
+    public static bool isActive = false;
 
     private void Start()
     {
@@ -20,7 +27,12 @@ public class DialogueSystem : MonoBehaviour
     {
         if (isActive)
         {
+            dialogueBox.SetActive(true);
             GetInputs();
+        }
+        else
+        {
+            dialogueBox.SetActive(false);
         }
     }
 
@@ -42,7 +54,7 @@ public class DialogueSystem : MonoBehaviour
             }
             else
             {
-                EndDiaglogue();
+                EndDialogue();
             }
         }
     }
@@ -52,13 +64,15 @@ public class DialogueSystem : MonoBehaviour
     /// </summary>
     /// <param name="messages">Les nouveaux messages du dialogue</param>
     /// <param name="characterPortrait">L'image du personnage qui parle</param>
-    private void StartDialogue(string[] messages, Sprite characterPortrait)
+    private void StartDialogue(string[] messages, string charName, Sprite characterPortrait)
     {
         this.messages = new Queue<string>(messages);
-        Material portraitMaterial = new Material(Shader.Find("Sprites-Default"));
-        portraitMaterial.mainTexture = characterPortrait.texture;
+        this.ChangeMessage();
 
-        this.portrait.material = portraitMaterial;
+        this.charName.text = charName;
+
+        portrait.sprite = characterPortrait;
+
         isActive = true;
     }
 
@@ -73,7 +87,7 @@ public class DialogueSystem : MonoBehaviour
     /// <summary>
     /// Fini le dialogue en cours.
     /// </summary>
-    private void EndDiaglogue()
+    private void EndDialogue()
     {
         isActive = false;
     }

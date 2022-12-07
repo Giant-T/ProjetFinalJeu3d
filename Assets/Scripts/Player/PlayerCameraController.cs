@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerCameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
+
+    [Header("Sensitivity")]
     [SerializeField] private float xSensitivity = 100.0f;
     [SerializeField] private float ySensitivity = 100.0f;
 
@@ -18,6 +20,9 @@ public class PlayerCameraController : MonoBehaviour
 
     private void Update()
     {
+        if (DialogueSystem.isActive)
+            return;
+
         GetInputs();
     }
 

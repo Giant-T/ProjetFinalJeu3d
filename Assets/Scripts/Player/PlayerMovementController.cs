@@ -26,6 +26,9 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
+        if (DialogueSystem.isActive)
+            return;
+
         isOnGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
         GetInputs();
 
