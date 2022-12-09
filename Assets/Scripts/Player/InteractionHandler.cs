@@ -15,7 +15,6 @@ public class InteractionHandler : MonoBehaviour
 
         if (InteractableIsInRange(ref interactable))
         {
-            Debug.Log(interactable);
             if (!interactableIsInZone)
             {
                 TriggerChange(true);
