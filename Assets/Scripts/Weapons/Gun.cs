@@ -7,6 +7,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField] private Weapon weapon;
+    [SerializeField] private GameObject impactPrefab;
     private Camera cam;
 
     private int numberOfBullets;
@@ -75,6 +76,8 @@ public class Gun : MonoBehaviour
         {
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range))
             {
+                Instantiate(impactPrefab, hit.point, Quaternion.identity);
+
                 Hittable hittable = hit.transform.gameObject.GetComponent<Hittable>();
 
                 if (hittable)

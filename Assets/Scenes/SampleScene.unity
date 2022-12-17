@@ -13773,7 +13773,7 @@ GameObject:
   - component: {fileID: 977151216}
   - component: {fileID: 977151215}
   m_Layer: 0
-  m_Name: DiaglogueSystem
+  m_Name: DialogueSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15452,6 +15452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: c7db1316f132571439239670909db142, type: 2}
+  impactPrefab: {fileID: 4232883752057121321, guid: b384148aae75ca841acd32713319030d,
+    type: 3}
 --- !u!95 &1201013563
 Animator:
   serializedVersion: 4
