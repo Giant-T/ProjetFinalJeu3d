@@ -11,6 +11,11 @@ public class InteractionHandler : MonoBehaviour
 
     private void Update()
     {
+        if (DialogueSystem.Instance.isActive) {
+            TriggerChange(false);
+            return;
+        }
+
         Interactable interactable = null;
 
         if (InteractableIsInRange(ref interactable))
@@ -29,6 +34,11 @@ public class InteractionHandler : MonoBehaviour
         {
             TriggerChange(false);
         }
+    }
+
+    private void OnDrawGizmos() {
+       Gizmos.color = Color.yellow; 
+       Gizmos.DrawWireSphere(transform.position, zoneRadius);
     }
 
     private bool InteractableIsInRange(ref Interactable interactable)

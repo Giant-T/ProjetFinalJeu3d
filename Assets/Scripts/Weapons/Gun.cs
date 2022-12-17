@@ -30,7 +30,7 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        if (DialogueSystem.isActive)
+        if (DialogueSystem.Instance.isActive)
             return;
 
         GetInputs();

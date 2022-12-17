@@ -6,6 +6,8 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static DialogueSystem Instance { get; private set; }
+
     [SerializeField] private GameObject dialogueBox;
 
     [Header("Text Areas")]
@@ -16,7 +18,19 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Image portrait;
 
     private Queue<string> messages;
-    public static bool isActive = false;
+    public bool isActive = false;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
