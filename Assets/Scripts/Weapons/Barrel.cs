@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(AudioSource))]
 public class Barrel : MonoBehaviour
 {
     private const int MAX_NUMBER_BULLETS = 6;
@@ -11,10 +12,13 @@ public class Barrel : MonoBehaviour
     [SerializeField] private Gun gun;
     
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+
         RefreshSprite(MAX_NUMBER_BULLETS);
         gun.UpdateBulletCount += RefreshSprite;
     }
@@ -25,6 +29,7 @@ public class Barrel : MonoBehaviour
 
     private void RefreshSprite(int numberOfBullets)
     {
+        audioSource.Play();
         spriteRenderer.sprite = sprites[numberOfBullets];
     }
 

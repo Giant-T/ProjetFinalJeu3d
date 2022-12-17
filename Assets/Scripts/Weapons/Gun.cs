@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class Gun : MonoBehaviour
 {
     [SerializeField] private Weapon weapon;
@@ -15,6 +16,7 @@ public class Gun : MonoBehaviour
     private bool canReload = true;
 
     private Animator animator;
+    private AudioSource audioSource;
 
     public event Action<int> UpdateBulletCount;
 
@@ -27,6 +29,7 @@ public class Gun : MonoBehaviour
     {
         cam = Camera.main;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -65,6 +68,7 @@ public class Gun : MonoBehaviour
             return;
 
         numberOfBullets--;
+        audioSource.Play();
         UpdateBulletCount.Invoke(numberOfBullets);
         StartCoroutine(StartShotDelay());
 
