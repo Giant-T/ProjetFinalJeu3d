@@ -11,6 +11,9 @@ public abstract class Hittable : MonoBehaviour
 
     protected Sprite particleSprite;
 
+    /// <summary>
+    /// Crée les particules pour le tir.
+    /// </summary>
     protected void CreateParticle()
     {
         Material material = new Material(particleShader);
@@ -20,5 +23,8 @@ public abstract class Hittable : MonoBehaviour
         particleSystemRenderer.material = material;
     }
 
+    /// <summary>
+    /// Déclenche action d'être atteint.
+    /// </summary>
     public abstract void Hit();
 }

@@ -14,6 +14,10 @@ public class TileMapColliderGenerator : MonoBehaviour
         AddCollider(size);
     }
 
+    /// <summary>
+    /// Calcule la grosseur de la tilemap.
+    /// </summary>
+    /// <returns>La grosseur de la tilemap</returns>
     private Vector3 GetTileMapSize()
     {
         Tilemap tilemap = GetComponent<Tilemap>();
@@ -25,6 +29,10 @@ public class TileMapColliderGenerator : MonoBehaviour
         return size;
     }
 
+    /// <summary>
+    /// Ajoute les collisions au GameObject.
+    /// </summary>
+    /// <param name="size">La grosseur du BoxCollider.</param>
     private void AddCollider(Vector3 size)
     {
         BoxCollider collider = gameObject.AddComponent<BoxCollider>();

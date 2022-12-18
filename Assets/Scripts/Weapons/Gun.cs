@@ -40,6 +40,9 @@ public class Gun : MonoBehaviour
         GetInputs();
     }
 
+    /// <summary>
+    /// Prends les inputs du joueur pour savoir s'il tir ou s'il recharge.
+    /// </summary>
     private void GetInputs()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -52,6 +55,9 @@ public class Gun : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Recharge l'arme.
+    /// </summary>
     private void Reload()
     {
         if (numberOfBullets == weapon.maxBulletNumber || !canReload)
@@ -62,6 +68,9 @@ public class Gun : MonoBehaviour
         StartCoroutine(StartReloadDelay());
     }
 
+    /// <summary>
+    /// Tire une balle.
+    /// </summary>
     private void Shoot()
     {
         if (numberOfBullets < 1 || !canShoot)
@@ -92,6 +101,9 @@ public class Gun : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Démarre le délais de tir.
+    /// </summary>
     private IEnumerator StartShotDelay()
     {
         canShoot = false;
@@ -101,6 +113,9 @@ public class Gun : MonoBehaviour
         canShoot = true;
     }
 
+    /// <summary>
+    /// Démarre le délais de recharge.
+    /// </summary>
     private IEnumerator StartReloadDelay()
     {
         canReload = false;

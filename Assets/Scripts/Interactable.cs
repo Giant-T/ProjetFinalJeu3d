@@ -9,6 +9,9 @@ public class Interactable : MonoBehaviour
 {
     public UnityEvent OnInteract;
 
+    /// <summary>
+    /// Permet d'intéragir avec un objet.
+    /// </summary>
     public void Interact()
     {
         OnInteract?.Invoke();

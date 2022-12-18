@@ -10,6 +10,9 @@ public class DialogueTrigger : MonoBehaviour
 
     public static Action<string[], string, Sprite> TriggerDialogue;
 
+    /// <summary>
+    /// Lance le déclencheur de dialogue.
+    /// </summary>
     public void SendTrigger()
     {
         TriggerDialogue?.Invoke(messages, charName, characterPortrait);

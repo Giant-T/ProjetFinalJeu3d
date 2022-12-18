@@ -42,6 +42,9 @@ public class PlayerMovementController : MonoBehaviour
         velocity *= decelaration * Time.deltaTime;
     }
 
+    /// <summary>
+    /// Prend les entrées du joueur et le déplace en conséquence.
+    /// </summary>
     private void GetInputs()
     {
         float x = Input.GetAxis("Horizontal");
@@ -57,11 +60,17 @@ public class PlayerMovementController : MonoBehaviour
         velocity += move;
     }
 
+    /// <summary>
+    /// Calcule la gravité à appliquer.
+    /// </summary>
     private void CalcGravity()
     {
         velocity.y += gravity * Time.deltaTime;
     }
 
+    /// <summary>
+    /// Déplace le joueur selon sa vélocité.
+    /// </summary>
     private void Move()
     {
         controller.Move(velocity);

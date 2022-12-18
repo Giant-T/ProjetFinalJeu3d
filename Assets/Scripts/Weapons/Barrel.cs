@@ -27,6 +27,10 @@ public class Barrel : MonoBehaviour
         gun.UpdateBulletCount -= RefreshSprite;
     }
 
+    /// <summary>
+    /// Rafraichit le nombre de balle affichées.
+    /// </summary>
+    /// <param name="numberOfBullets">Le nombre de balles à afficher.</param>
     private void RefreshSprite(int numberOfBullets)
     {
         audioSource.Play();

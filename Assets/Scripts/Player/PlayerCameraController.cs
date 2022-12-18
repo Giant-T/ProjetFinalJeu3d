@@ -26,6 +26,9 @@ public class PlayerCameraController : MonoBehaviour
         GetInputs();
     }
 
+    /// <summary>
+    /// Prends les entrées du joueur et bouge la caméra en conséquence. 
+    /// </summary>
     private void GetInputs()
     {
         float mouseX = Input.GetAxis("Mouse X") * xSensitivity * Time.deltaTime;

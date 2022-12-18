@@ -18,12 +18,18 @@ public class BreakOnHit : Hittable
         CreateParticle();
     }
 
+    /// <summary>
+    /// Mets les valeurs du scriptable objects dans les components.
+    /// </summary>
     private void SetValues()
     {
         particleSprite = breakable.spriteParticles;
         spriteRenderer.sprite = breakable.sprite;
     }
 
+    /// <summary>
+    /// Génère les collisions selon le sprite.
+    /// </summary>
     private void GenerateCollider()
     {
         BoxCollider boxCollider = gameObject.AddComponent<BoxCollider>();
