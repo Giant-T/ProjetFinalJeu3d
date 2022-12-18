@@ -2,13 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Gun : MonoBehaviour
 {
     [SerializeField] private Weapon weapon;
     [SerializeField] private GameObject impactPrefab;
+    [SerializeField] private Barrel barrel;
+
     private Camera cam;
 
     private int numberOfBullets;
@@ -17,6 +21,7 @@ public class Gun : MonoBehaviour
 
     private Animator animator;
     private AudioSource audioSource;
+    private SpriteRenderer sprite;
 
     public event Action<int> UpdateBulletCount;
 
@@ -28,8 +33,16 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
+
         animator = GetComponent<Animator>();
+        animator.runtimeAnimatorController = weapon.AnimatorController;
+
         audioSource = GetComponent<AudioSource>();
+
+        sprite = GetComponent<SpriteRenderer>();
+        sprite.sprite = weapon.sprite;
+
+        barrel.sprites = weapon.chamberSprites;
     }
 
     private void Update()

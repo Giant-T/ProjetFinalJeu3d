@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b2a844e837937d459360bb61e1a35e4
+guid: e7bb1cebfe5b1dc46a3f0b8ab6d5f801
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,43 +116,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1-in-game_0
+      name: barrel_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 57
-        height: 75
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 52
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eab563b8c7de99d46a2d7a8602e6cba8
-      internalID: 224246292
+      spriteID: 4739ead8c9ef59d4e8389cb170a65d7e
+      internalID: -1934906471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1-in-game_1
+      name: barrel_1
       rect:
         serializedVersion: 2
-        x: 59
+        x: 52
         y: 0
-        width: 57
-        height: 96
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 52
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c65bb893bd429147a62623a38a1f480
-      internalID: -965868365
+      spriteID: 13330610b4c17434bbd6219088e552c6
+      internalID: 299043273
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a9fdedb829f87a4408cf35554cfc2e30
+    spriteID: 735c5c4ae77aaf6469cb09739a756623
     internalID: 0
     vertices: []
     indices: 
@@ -168,8 +168,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1-in-game_1: -965868365
-      1-in-game_0: 224246292
+      barrel_1: 299043273
+      barrel_0: -1934906471
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
