@@ -4,11 +4,18 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class BreakOnHit : Hittable
+public class BreakOnHit : MonoBehaviour, Hittable
 {
     [SerializeField] Breakable breakable;
 
+    [Header("Particles")]
+    [SerializeField] private Shader particleShader;
+    [SerializeField] private new ParticleSystem particleSystem;
+    [SerializeField] private ParticleSystemRenderer particleSystemRenderer;
+
     private SpriteRenderer spriteRenderer;
+
+    protected Sprite particleSprite;
 
     private void Start()
     {
@@ -16,6 +23,18 @@ public class BreakOnHit : Hittable
         GenerateCollider();
         SetValues();
         CreateParticle();
+    }
+
+    /// <summary>
+    /// Crée les particules pour le tir.
+    /// </summary>
+    protected void CreateParticle()
+    {
+        Material material = new Material(particleShader);
+        material.mainTexture = particleSprite.texture;
+        material.name = "Shattered Pieces";
+
+        particleSystemRenderer.material = material;
     }
 
     /// <summary>
@@ -45,7 +64,7 @@ public class BreakOnHit : Hittable
         boxCollider.center = center;
     }
 
-    public override void Hit()
+    public void Hit(float _damage)
     {
         spriteRenderer.enabled = false;
         particleSystem.Play();

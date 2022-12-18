@@ -93,9 +93,9 @@ public class Gun : MonoBehaviour
 
                 Hittable hittable = hit.transform.gameObject.GetComponent<Hittable>();
 
-                if (hittable)
+                if (hittable != null)
                 {
-                    hittable.Hit();
+                    hittable.Hit(weapon.damage);
                 }
             }
         }
