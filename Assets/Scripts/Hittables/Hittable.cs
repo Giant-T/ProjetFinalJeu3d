@@ -7,5 +7,5 @@ public interface Hittable
     /// <summary>
     /// Déclenche action d'être atteint.
     /// </summary>
-    public abstract void Hit(float damage);
+    void Hit(float damage);
 }
