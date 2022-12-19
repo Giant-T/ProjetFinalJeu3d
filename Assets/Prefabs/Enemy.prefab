@@ -115,13 +115,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3a06f3b233a2641a9100837dfacd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   gun: {fileID: 5425283801876216851}
   bullet: {fileID: 910238438484568631, guid: 7d79bd72764b0c0459bd46530b80a780, type: 3}
   secondsBetweenShots: 2
-  range: 15
+  range: 10
   health: 5
   speed: 3
+  gravity: -10
 --- !u!82 &1387510365
 AudioSource:
   m_ObjectHideFlags: 0

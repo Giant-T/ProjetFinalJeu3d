@@ -7,14 +7,15 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Enemy : MonoBehaviour, Hittable
 {
-    [SerializeField] private Transform player;
     [SerializeField] private Transform gun;
     [SerializeField] private GameObject bullet;
     [SerializeField] private float secondsBetweenShots;
     [SerializeField] private float range = 30;
     [SerializeField] private float health = 10f;
     [SerializeField] private float speed = 2f;
+    [SerializeField] private float gravity = -10f;
 
+    private Transform player;
     private bool playerIsInRange = false;
     private bool canShoot = true;
 
@@ -27,6 +28,11 @@ public class Enemy : MonoBehaviour, Hittable
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         controller = GetComponent<CharacterController>();
+    }
+
+    public void SetPlayer(Transform player)
+    {
+        this.player = player;
     }
 
     private void Update()
@@ -45,6 +51,7 @@ public class Enemy : MonoBehaviour, Hittable
                 Move();
             }
         }
+        controller.Move(transform.up * gravity * Time.deltaTime);
     }
 
     private void LateUpdate()
@@ -54,6 +61,9 @@ public class Enemy : MonoBehaviour, Hittable
         transform.rotation = Quaternion.LookRotation(lookPosition);
     }
 
+    /// <summary>
+    /// Permet à l'ennemi d'attaquer s'il peut sinon il attend
+    /// </summary>
     private void Attack()
     {
         if (canShoot)
@@ -65,6 +75,9 @@ public class Enemy : MonoBehaviour, Hittable
         animator.SetTrigger("Idle");
     }
 
+    /// <summary>
+    /// Tir une balle dans la direction que l'ennemi regarde.
+    /// </summary>
     private IEnumerator Shoot()
     {
         canShoot = false;
@@ -77,6 +90,9 @@ public class Enemy : MonoBehaviour, Hittable
         canShoot = true;
     }
 
+    /// <summary>
+    /// Déplace l'ennemi où il regarde.
+    /// </summary>
     private void Move()
     {
         animator.SetTrigger("Walk");
