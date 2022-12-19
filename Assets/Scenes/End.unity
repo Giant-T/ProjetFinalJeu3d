@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: 1058971345}
   - component: {fileID: 1058971347}
   - component: {fileID: 1058971346}
+  - component: {fileID: 1058971348}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -580,8 +581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30.3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -68.4}
+  m_SizeDelta: {x: 200, y: 103.1591}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058971346
 MonoBehaviour:
@@ -638,7 +639,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -680,6 +681,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058971344}
   m_CullTransparentMesh: 1
+--- !u!114 &1058971348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058971344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0516cded84c7742840532fe6c2080d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameSender: {fileID: 1383271138}
 --- !u!1 &1231345569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1020,7 @@ GameObject:
   - component: {fileID: 1383271137}
   - component: {fileID: 1383271136}
   - component: {fileID: 1383271135}
+  - component: {fileID: 1383271138}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -1020,7 +1035,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383271133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1170,6 +1185,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383271133}
   m_CullTransparentMesh: 1
+--- !u!114 &1383271138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383271133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03cb34f2b1908c448c62bd0dc157f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575823286
 GameObject:
   m_ObjectHideFlags: 0
