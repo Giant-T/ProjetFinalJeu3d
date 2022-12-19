@@ -100,7 +100,7 @@ public class Gun : MonoBehaviour
 
         for (int i = 0; i < weapon.pelletsPerShot; i++)
         {
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range))
+            if (Physics.Raycast(cam.transform.position, Quaternion.Euler(UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), UnityEngine.Random.Range(-weapon.bulletSpread, weapon.bulletSpread), 0) * cam.transform.forward, out hit, weapon.range))
             {
                 Instantiate(impactPrefab, hit.point, Quaternion.identity);
 

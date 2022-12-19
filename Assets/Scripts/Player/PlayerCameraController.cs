@@ -26,6 +26,11 @@ public class PlayerCameraController : MonoBehaviour
         GetInputs();
     }
 
+    private void OnDestroy()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     /// <summary>
     /// Prends les entrées du joueur et bouge la caméra en conséquence. 
     /// </summary>

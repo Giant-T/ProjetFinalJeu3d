@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class BreakOnHit : MonoBehaviour, Hittable
@@ -13,9 +13,11 @@ public class BreakOnHit : MonoBehaviour, Hittable
     [SerializeField] private new ParticleSystem particleSystem;
     [SerializeField] private ParticleSystemRenderer particleSystemRenderer;
 
+    public UnityEvent OnHit;
+
     private SpriteRenderer spriteRenderer;
 
-    protected Sprite particleSprite;
+    private Sprite particleSprite;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class BreakOnHit : MonoBehaviour, Hittable
     /// <summary>
     /// Crée les particules pour le tir.
     /// </summary>
-    protected void CreateParticle()
+    private void CreateParticle()
     {
         Material material = new Material(particleShader);
         material.mainTexture = particleSprite.texture;
@@ -69,5 +71,6 @@ public class BreakOnHit : MonoBehaviour, Hittable
         spriteRenderer.enabled = false;
         particleSystem.Play();
         Destroy(gameObject, 0.5f);
+        OnHit?.Invoke();
     }
 }
