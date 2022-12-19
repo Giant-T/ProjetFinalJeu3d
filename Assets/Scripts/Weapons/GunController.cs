@@ -50,7 +50,6 @@ public class GunController : MonoBehaviour
     /// </summary>
     private void SetWeaponInfo()
     {
-        numberOfBullets = weapon.maxBulletNumber;
         audioSource.clip = weapon.shotSound;
 
         sprite.sprite = weapon.sprite;
