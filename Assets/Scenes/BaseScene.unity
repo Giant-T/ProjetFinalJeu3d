@@ -21124,6 +21124,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8803047652483606718, guid: c2b09573f5facb148ac7b7985098e3b3,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8803047653789352273, guid: c2b09573f5facb148ac7b7985098e3b3,
         type: 3}
       propertyPath: m_Name

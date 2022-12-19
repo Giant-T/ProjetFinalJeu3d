@@ -17,40 +17,36 @@ public class WeaponAnimationGenerator : Editor
         if (GUILayout.Button("Generate Animator Controller"))
         {
             var weapon = target as Weapon;
-            var animatorController = GenerateAnimatorController(weapon.sprite, weapon.shootSprite);
-            weapon.animatorController = animatorController;
+            var path = GenerateAnimatorController(weapon.sprite, weapon.shootSprite);
+            weapon.animatorControllerPath = path;
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="animatorController"></param>
-    private void SaveAnimatorController(AnimatorController animatorController)
+    private string SaveAnimatorController(AnimatorController animatorController)
     {
-        var path = EditorUtility.SaveFilePanelInProject("Save Animator Controller", "New Animator Controller", "controller", "Save Animator Controller", "Assets");
+        var path = EditorUtility.SaveFilePanelInProject("Save Animator Controller", "New Animator Controller", "controller", "Save Animator Controller", "Assets/Animations");
         if (path.Length != 0)
         {
             AssetDatabase.CreateAsset(animatorController, path);
         }
+        return path;
     }
 
-    private void SaveAnimation(AnimatorController animatorController, AnimationClip idleAnimation, AnimationClip shootAnimation)
+    private void SaveAnimation(AnimationClip idleAnimation, AnimationClip shootAnimation)
     {
-        var path = EditorUtility.SaveFilePanelInProject("Save idle Animation", "New Animation", "anim", "Save Animation", "Assets");
+        var path = EditorUtility.SaveFilePanelInProject("Save idle Animation", "Idle", "anim", "Save Animation", "Assets/Animations");
         if (path.Length != 0)
         {
             AssetDatabase.CreateAsset(idleAnimation, path);
         }
-        var path2 = EditorUtility.SaveFilePanelInProject("Save shoot Animation", "New Animation", "anim", "Save Animation", "Assets");
+        var path2 = EditorUtility.SaveFilePanelInProject("Save shoot Animation", "Shoot", "anim", "Save Animation", "Assets/Animations");
         if (path2.Length != 0)
         {
             AssetDatabase.CreateAsset(shootAnimation, path2);
         }
-        SaveAnimatorController(animatorController);
     }
 
-    private AnimatorController GenerateAnimatorController(Sprite sprite, Sprite shootSprite)
+    private string GenerateAnimatorController(Sprite sprite, Sprite shootSprite)
     {
         // Création de la courbe pour les animations
         var spriteBinding = new EditorCurveBinding();
@@ -84,8 +80,8 @@ public class WeaponAnimationGenerator : Editor
         defaultTransition.hasExitTime = true;
         defaultTransition.exitTime = 0.1f;
 
-        SaveAnimation(animatorController, idleState.motion as AnimationClip, shootState.motion as AnimationClip);
-        return animatorController;
+        SaveAnimation(idleState.motion as AnimationClip, shootState.motion as AnimationClip);
+        return SaveAnimatorController(animatorController);
     }
 
     /// <summary>

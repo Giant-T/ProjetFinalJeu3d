@@ -21,5 +21,5 @@ public class Weapon : ScriptableObject
     public Sprite sprite;
     public Sprite shootSprite;
     public Sprite[] chamberSprites;
-    public RuntimeAnimatorController animatorController;
+    public string animatorControllerPath;
 }

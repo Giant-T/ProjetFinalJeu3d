@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class GunController : MonoBehaviour
@@ -20,7 +19,6 @@ public class GunController : MonoBehaviour
     private bool canShoot = true;
     private bool canReload = true;
 
-    private Animator animator;
     private AudioSource audioSource;
     private SpriteRenderer sprite;
 
@@ -31,8 +29,6 @@ public class GunController : MonoBehaviour
         bulletsPerGun = weapons.Select(w => w.maxBulletNumber).ToArray();
 
         cam = Camera.main;
-
-        animator = GetComponent<Animator>();
 
         audioSource = GetComponent<AudioSource>();
 
@@ -55,7 +51,6 @@ public class GunController : MonoBehaviour
     private void SetWeaponInfo()
     {
         numberOfBullets = weapon.maxBulletNumber;
-        animator.runtimeAnimatorController = weapon.animatorController;
         audioSource.clip = weapon.shotSound;
 
         sprite.sprite = weapon.sprite;
@@ -114,8 +109,6 @@ public class GunController : MonoBehaviour
         audioSource.Play();
         UpdateBulletCount.Invoke(numberOfBullets);
         StartCoroutine(StartShotDelay());
-
-        animator.SetTrigger("Shoot");
 
         RaycastHit hit;
 
