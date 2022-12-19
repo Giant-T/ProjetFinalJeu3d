@@ -38,6 +38,7 @@ public class Gun : MonoBehaviour
         animator.runtimeAnimatorController = weapon.AnimatorController;
 
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip = weapon.shotSound;
 
         sprite = GetComponent<SpriteRenderer>();
         sprite.sprite = weapon.sprite;

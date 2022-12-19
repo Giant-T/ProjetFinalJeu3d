@@ -8,6 +8,7 @@ using UnityEngine.Animations;
 public class Weapon : ScriptableObject
 {
     public float damage;
+    public AudioClip shotSound;
     public int pelletsPerShot;
     public int maxBulletNumber;
 

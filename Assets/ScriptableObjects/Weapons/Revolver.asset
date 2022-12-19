@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Revolver
   m_EditorClassIdentifier: 
   damage: 2
+  shotSound: {fileID: 8300000, guid: e41fa326f338a1947b7e068f1e995ac0, type: 3}
   pelletsPerShot: 1
   maxBulletNumber: 6
   bulletSpread: 0

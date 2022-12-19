@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Transition.unity
     guid: 3889f92cb2bf15b4aad8e364f801e219
+  - enabled: 1
+    path: Assets/Scenes/FinalFight.unity
+    guid: 469b7137441a0684eaf7c39873ad6d53
   m_configObjects: {}

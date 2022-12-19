@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   damage: 0.5
+  shotSound: {fileID: 8300000, guid: d1e543588a9d9bb4b895d76b09199f0f, type: 3}
   pelletsPerShot: 8
   maxBulletNumber: 1
   bulletSpread: 12

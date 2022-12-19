@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class DialogueSystem : MonoBehaviour
 
     [Header("Portrait")]
     [SerializeField] private Image portrait;
+
+    public UnityEvent OnDialogueEnd;
 
     private Queue<string> messages;
     private bool _isActive = false;
@@ -42,7 +45,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
-        EndDialogue();
+        dialogueBox.SetActive(false);
         DialogueTrigger.TriggerDialogue += Instance.StartDialogue;
     }
 
@@ -110,5 +113,6 @@ public class DialogueSystem : MonoBehaviour
     {
         _isActive = false;
         dialogueBox.SetActive(false);
+        OnDialogueEnd?.Invoke();
     }
 }
