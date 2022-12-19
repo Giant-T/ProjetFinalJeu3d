@@ -17,7 +17,7 @@ MonoBehaviour:
   pelletsPerShot: 1
   maxBulletNumber: 6
   bulletSpread: 0
-  range: 100
+  range: 30
   secondsBetweenShots: 0.5
   secondsBetweenReloads: 0.25
   sprite: {fileID: -1786061095, guid: 924e818d3a1073f4e9d722a9f78745c4, type: 3}
