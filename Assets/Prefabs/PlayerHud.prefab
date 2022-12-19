@@ -244,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: c7db1316f132571439239670909db142, type: 2}
+  - {fileID: 11400000, guid: 45fc8d3a50843e04dad54c3b6cc62100, type: 2}
   impactPrefab: {fileID: 4232883752057121321, guid: b384148aae75ca841acd32713319030d,
     type: 3}
   barrel: {fileID: 8803047653965618000}
@@ -745,7 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb67816d9250b7b4bb8956bd007a7aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 4
   OnDeath:
     m_PersistentCalls:
       m_Calls:
