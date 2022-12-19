@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6caf4d64bab6074eabf6f51c0eb8e7f, type: 3}
+  m_Name: Revolver
+  m_EditorClassIdentifier: 
+  damage: 2
+  shotSound: {fileID: 8300000, guid: e41fa326f338a1947b7e068f1e995ac0, type: 3}
+  pelletsPerShot: 1
+  maxBulletNumber: 6
+  bulletSpread: 0
+  range: 30
+  secondsBetweenShots: 0.3
+  secondsBetweenReloads: 0.25
+  sprite: {fileID: -1786061095, guid: 924e818d3a1073f4e9d722a9f78745c4, type: 3}
+  shootSprite: {fileID: -2039677367, guid: 924e818d3a1073f4e9d722a9f78745c4, type: 3}
+  chamberSprites:
+  - {fileID: -2097779035, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -1459525175, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -2068645925, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: 789917151, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -213494519, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: 188627986, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  - {fileID: -1528596721, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  animatorController: {fileID: 9100000, guid: 55f6ef78a832b9648a9c984df51ab467, type: 2}
