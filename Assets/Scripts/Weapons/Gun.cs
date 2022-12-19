@@ -44,6 +44,7 @@ public class Gun : MonoBehaviour
         sprite.sprite = weapon.sprite;
 
         barrel.sprites = weapon.chamberSprites;
+        UpdateBulletCount?.Invoke(numberOfBullets);
     }
 
     private void Update()
@@ -78,7 +79,7 @@ public class Gun : MonoBehaviour
             return;
 
         numberOfBullets++;
-        UpdateBulletCount.Invoke(numberOfBullets);
+        UpdateBulletCount?.Invoke(numberOfBullets);
         StartCoroutine(StartReloadDelay());
     }
 
