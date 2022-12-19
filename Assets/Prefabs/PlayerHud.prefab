@@ -242,7 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6acd923b98dab949acdac598652de13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 45fc8d3a50843e04dad54c3b6cc62100, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: c7db1316f132571439239670909db142, type: 2}
   impactPrefab: {fileID: 4232883752057121321, guid: b384148aae75ca841acd32713319030d,
     type: 3}
   barrel: {fileID: 8803047653965618000}
@@ -650,6 +651,7 @@ GameObject:
   - component: {fileID: 8803047653763763629}
   - component: {fileID: 8803047653763763630}
   - component: {fileID: 741789414}
+  - component: {fileID: 1214226005}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -744,6 +746,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1214226005}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1214226005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803047653763763628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18506c5de141b58439906bb88a0d21e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: End
 --- !u!1 &8803047653789352273
 GameObject:
   m_ObjectHideFlags: 0

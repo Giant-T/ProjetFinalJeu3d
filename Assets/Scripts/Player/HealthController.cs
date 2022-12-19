@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
 public class HealthController : MonoBehaviour
 {
     [SerializeField] private float health = 10;
+    public UnityEvent OnDeath;
 
     private Slider healthSlider;
 
@@ -33,5 +35,10 @@ public class HealthController : MonoBehaviour
     {
         health = value;
         healthSlider.value = value;
+
+        if (health <= 0)
+        {
+            OnDeath?.Invoke();
+        }
     }
 }
