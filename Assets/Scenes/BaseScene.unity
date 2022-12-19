@@ -13522,7 +13522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Bravo! Tu es vraiment le meilleur!
+  - Bravo! Tu es vraiment le meilleur! Prends mon fusil de chasse et va tuer ces
+    bandits! Pour changer d'arme utilise la touche <sprite="keysTilemap" index=189><sprite="keysTilemap"
+    index=190>
   - "Va vers l'Ouest et marche pendant deux jours. L\xE0 bas tu trouveras le camps
     des bandits."
   - "Mais fais attention, le d\xE9sert ne pardonne pas... Dans le d\xE9sert, les
@@ -16714,6 +16716,11 @@ MonoBehaviour:
   - "Bonjour jeune homme, j'ai l'impression que tu n'as jamais tenu d'arme \xE0 feu."
   - "Vise bien au milieu de ton champ de vision avec <sprite=\"keysTilemap\" index=76>
     puis appuie sur la d\xE9tente<sprite=\"keysTilemap\" index=77>."
+  - "Si jamais tu veux te d\xE9placer, utilise les touches <sprite=\"keysTilemap\"
+    index=86> <sprite=\"keysTilemap\" index=120> <sprite=\"keysTilemap\" index=121>
+    <sprite=\"keysTilemap\" index=122>"
+  - "Si jamais ton arme manque de balle, mets en une dans le barillet \xE0 l'aide
+    de la touche <sprite=\"keysTilemap\" index=88>"
   - "Si tu r\xE9ussi \xE0 tirer ces trois bouteilles je vais te dire o\xF9 trouver
     les bandits qui s\xE8ment la pagaille."
   charName: Maire
@@ -21120,6 +21127,17 @@ PrefabInstance:
     - target: {fileID: 8803047652483606718, guid: c2b09573f5facb148ac7b7985098e3b3,
         type: 3}
       propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: c7db1316f132571439239670909db142,
+        type: 2}
+    - target: {fileID: 8803047652483606718, guid: c2b09573f5facb148ac7b7985098e3b3,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803047652483606718, guid: c2b09573f5facb148ac7b7985098e3b3,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: c7db1316f132571439239670909db142,
         type: 2}

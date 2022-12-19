@@ -1648,6 +1648,23 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8803047652483606718, guid: c2b09573f5facb148ac7b7985098e3b3,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803047652483606718, guid: c2b09573f5facb148ac7b7985098e3b3,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c7db1316f132571439239670909db142,
+        type: 2}
+    - target: {fileID: 8803047652483606718, guid: c2b09573f5facb148ac7b7985098e3b3,
+        type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 45fc8d3a50843e04dad54c3b6cc62100,
+        type: 2}
     - target: {fileID: 8803047652998271970, guid: c2b09573f5facb148ac7b7985098e3b3,
         type: 3}
       propertyPath: m_IsActive

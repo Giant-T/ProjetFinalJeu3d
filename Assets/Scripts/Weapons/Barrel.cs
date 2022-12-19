@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Barrel : MonoBehaviour
 {
-    [SerializeField] private Gun gun;
+    [SerializeField] private GunController gun;
     public Sprite[] sprites;
 
     private SpriteRenderer spriteRenderer;

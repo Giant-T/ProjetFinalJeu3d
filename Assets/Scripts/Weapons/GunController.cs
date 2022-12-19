@@ -2,20 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Linq;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Gun : MonoBehaviour
+public class GunController : MonoBehaviour
 {
-    [SerializeField] private Weapon weapon;
+    [SerializeField] private Weapon[] weapons;
+    private int[] bulletsPerGun;
+    private int weaponIndex = 0;
     [SerializeField] private GameObject impactPrefab;
     [SerializeField] private Barrel barrel;
 
     private Camera cam;
 
-    private int numberOfBullets;
     private bool canShoot = true;
     private bool canReload = true;
 
@@ -25,26 +26,19 @@ public class Gun : MonoBehaviour
 
     public event Action<int> UpdateBulletCount;
 
-    private void Awake()
-    {
-        numberOfBullets = weapon.maxBulletNumber;
-    }
-
     private void Start()
     {
+        bulletsPerGun = weapons.Select(w => w.maxBulletNumber).ToArray();
+
         cam = Camera.main;
 
         animator = GetComponent<Animator>();
-        animator.runtimeAnimatorController = weapon.AnimatorController;
 
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = weapon.shotSound;
 
         sprite = GetComponent<SpriteRenderer>();
-        sprite.sprite = weapon.sprite;
 
-        barrel.sprites = weapon.chamberSprites;
-        UpdateBulletCount?.Invoke(numberOfBullets);
+        SetWeaponInfo();
     }
 
     private void Update()
@@ -56,6 +50,21 @@ public class Gun : MonoBehaviour
     }
 
     /// <summary>
+    /// Change les informations de l'arme.
+    /// </summary>
+    private void SetWeaponInfo()
+    {
+        numberOfBullets = weapon.maxBulletNumber;
+        animator.runtimeAnimatorController = weapon.AnimatorController;
+        audioSource.clip = weapon.shotSound;
+
+        sprite.sprite = weapon.sprite;
+
+        barrel.sprites = weapon.chamberSprites;
+        UpdateBulletCount?.Invoke(numberOfBullets);
+    }
+
+    /// <summary>
     /// Prends les inputs du joueur pour savoir s'il tir ou s'il recharge.
     /// </summary>
     private void GetInputs()
@@ -64,9 +73,19 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            weaponIndex++;
+            if (weaponIndex >= weapons.Length)
+            {
+                weaponIndex = 0;
+            }
+
+            SetWeaponInfo();
         }
     }
 
@@ -138,5 +157,25 @@ public class Gun : MonoBehaviour
         yield return new WaitForSeconds(weapon.secondsBetweenReloads);
 
         canReload = true;
+    }
+
+    private Weapon weapon
+    {
+        get
+        {
+            return weapons[weaponIndex];
+        }
+    }
+
+    private int numberOfBullets
+    {
+        get
+        {
+            return bulletsPerGun[weaponIndex];
+        }
+        set
+        {
+            bulletsPerGun[weaponIndex] = value;
+        }
     }
 }
