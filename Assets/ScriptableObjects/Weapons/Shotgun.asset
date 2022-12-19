@@ -25,3 +25,4 @@ MonoBehaviour:
   chamberSprites:
   - {fileID: 299043273, guid: e7bb1cebfe5b1dc46a3f0b8ab6d5f801, type: 3}
   - {fileID: -1934906471, guid: e7bb1cebfe5b1dc46a3f0b8ab6d5f801, type: 3}
+  animatorController: {fileID: 9100000, guid: 73cacaab8b958c34690e3c75e5f2272e, type: 2}

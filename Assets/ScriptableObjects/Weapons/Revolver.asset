@@ -30,3 +30,4 @@ MonoBehaviour:
   - {fileID: -213494519, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
   - {fileID: 188627986, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
   - {fileID: -1528596721, guid: bdb334f15344ff943b1b20a789da341a, type: 3}
+  animatorController: {fileID: 9100000, guid: 55f6ef78a832b9648a9c984df51ab467, type: 2}
