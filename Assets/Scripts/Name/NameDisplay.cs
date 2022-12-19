@@ -33,6 +33,6 @@ public class NameDisplay : MonoBehaviour
             value = value.Substring(0, 30);
         }
 
-        textMesh.text = $"{value} êtes mort";
+        textMesh.text = $"{value} est mort";
     }
 }
