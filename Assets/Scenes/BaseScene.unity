@@ -13445,6 +13445,7 @@ GameObject:
   - component: {fileID: 992078322}
   - component: {fileID: 992078321}
   - component: {fileID: 992078320}
+  - component: {fileID: 992078323}
   m_Layer: 0
   m_Name: TutorialObjective
   m_TagString: Untagged
@@ -13465,6 +13466,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalNumberOfObjectives: 3
+  OnObjectiveComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 992078323}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: SendTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &992078321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13493,6 +13509,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992078323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992078319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41aa3c500fe426488e5ff55222b8919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - Bravo! Tu es vraiment le meilleur!
+  - "Va vers l'Ouest et marche pendant deux jours. L\xE0 bas tu trouveras le camps
+    des bandits."
+  - "Mais fais attention, le d\xE9sert ne pardonne pas... Dans le d\xE9sert, les
+    bandits seront les derniers de tes soucis"
+  charName: Maire
+  characterPortrait: {fileID: 21300000, guid: 96e5483b756436b4496353f6bf3ae9a1, type: 3}
+  onStart: 0
 --- !u!1001 &1004834547
 PrefabInstance:
   m_ObjectHideFlags: 0

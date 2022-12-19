@@ -246,8 +246,7 @@ MonoBehaviour:
     vos r\xE9serves d'eau."
   - "Les hallucinations se multiplient et bien vite, vous ne faites plus la diff\xE9rence
     entre le vrai et le faux."
-  - "Malgr\xE9 tout, vous arriv\xE9 \xE0 destination, pr\xEAt \xE0 mettre fin au
-    grabuge."
+  - "Malgr\xE9 tout, vous arrivez \xE0 destination, pr\xEAt \xE0 mettre fin au grabuge."
   charName: "D\xE9sert"
   characterPortrait: {fileID: 21300000, guid: 589c547a86e99cf4085a9ddedbeed916, type: 3}
   onStart: 1

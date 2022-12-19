@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SceneChanger))]
 public class TutorialObjectiveController : MonoBehaviour
@@ -9,13 +10,16 @@ public class TutorialObjectiveController : MonoBehaviour
     private int numberOfFinishedObjectives = 0;
     private SceneChanger sceneChanger;
 
+    public UnityEvent OnObjectiveComplete;
+
     private void Start()
     {
         sceneChanger = GetComponent<SceneChanger>();
         Objective.OnObjectiveFinish += FinishObjective;
     }
 
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
         Objective.OnObjectiveFinish -= FinishObjective;
     }
 
@@ -25,7 +29,18 @@ public class TutorialObjectiveController : MonoBehaviour
 
         if (numberOfFinishedObjectives >= totalNumberOfObjectives)
         {
-            sceneChanger.ChangeScene();
+            OnObjectiveComplete?.Invoke();
+            StartCoroutine(WaitForDialogue());
         }
+    }
+
+    private IEnumerator WaitForDialogue()
+    {
+        while (DialogueSystem.Instance.isActive)
+        {
+            yield return null;
+        }
+
+        sceneChanger.ChangeScene();
     }
 }
