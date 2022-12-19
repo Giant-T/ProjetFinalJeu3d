@@ -18,7 +18,15 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Image portrait;
 
     private Queue<string> messages;
-    public bool isActive = false;
+    private bool _isActive = false;
+
+    public bool isActive
+    {
+        get
+        {
+            return _isActive;
+        }
+    }
 
     private void Awake()
     {
@@ -34,25 +42,21 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
-        DialogueTrigger.TriggerDialogue += StartDialogue;
+        EndDialogue();
+        DialogueTrigger.TriggerDialogue += Instance.StartDialogue;
     }
 
     private void Update()
     {
         if (isActive)
         {
-            dialogueBox.SetActive(true);
             GetInputs();
-        }
-        else
-        {
-            dialogueBox.SetActive(false);
         }
     }
 
     private void OnDestroy()
     {
-        DialogueTrigger.TriggerDialogue -= StartDialogue;
+        DialogueTrigger.TriggerDialogue -= Instance.StartDialogue;
     }
 
     /// <summary>
@@ -81,13 +85,14 @@ public class DialogueSystem : MonoBehaviour
     private void StartDialogue(string[] messages, string charName, Sprite characterPortrait)
     {
         this.messages = new Queue<string>(messages);
+        dialogueBox.SetActive(true);
         this.ChangeMessage();
 
         this.charName.text = charName;
 
         portrait.sprite = characterPortrait;
 
-        isActive = true;
+        _isActive = true;
     }
 
     /// <summary>
@@ -103,6 +108,7 @@ public class DialogueSystem : MonoBehaviour
     /// </summary>
     private void EndDialogue()
     {
-        isActive = false;
+        _isActive = false;
+        dialogueBox.SetActive(false);
     }
 }

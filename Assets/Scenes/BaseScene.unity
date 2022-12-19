@@ -13341,7 +13341,6 @@ MonoBehaviour:
   dialogueText: {fileID: 939218084}
   charName: {fileID: 1291179261}
   portrait: {fileID: 1912889889}
-  isActive: 0
 --- !u!4 &977151216
 Transform:
   m_ObjectHideFlags: 0
@@ -13475,7 +13474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18506c5de141b58439906bb88a0d21e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainMenu
+  sceneName: Transition
 --- !u!4 &992078322
 Transform:
   m_ObjectHideFlags: 0
@@ -16770,6 +16769,7 @@ MonoBehaviour:
     les bandits qui s\xE8ment la pagaille."
   charName: Maire
   characterPortrait: {fileID: 21300000, guid: 96e5483b756436b4496353f6bf3ae9a1, type: 3}
+  onStart: 0
 --- !u!65 &1503593144
 BoxCollider:
   m_ObjectHideFlags: 0
